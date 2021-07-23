@@ -58,6 +58,7 @@ tape(name, (test: tape.Test) => {
     test.plan(num);
     test.end();
     test.end(err);
+    test.teardown(() => {});
 
     test.fail(msg);
     test.fail(msg, extra);

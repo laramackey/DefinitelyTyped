@@ -111,6 +111,13 @@ declare namespace tape {
         end(err?: any): void;
 
         /**
+         * Register a callback to run after the individual test has completed.
+         * Multiple registered teardown callbacks will run in order.
+         * Useful for undoing side effects, closing network connections, etc.
+         */
+        teardown(cb: () => void): void;
+
+        /**
          * Generate a failing assertion with a message msg.
          */
         fail(msg?: string, extra?: AssertOptions): void;
